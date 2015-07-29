@@ -5,7 +5,7 @@ var http = require("http"); //创建http模块
 var url = require("url");   //创建url模块
 var querystring = require("querystring");
 
-function start() {
+function start(route) {
     function onRequest(request, response) {
         var urlpath = url.parse(request.url);   //urlpath获取了整个url
         var pathname = urlpath.pathname;        //获取pathname
@@ -19,6 +19,8 @@ function start() {
         console.log("name :" + querystring.parse(url.parse(request.url).query, '&', '=')["name"]);
         console.log("pwd :" + querystring.parse(url.parse(request.url).query, '&', '=')["pwd"]);
 
+        route(pathname);
+
         response.writeHead(200, {"Content-Type": "text/plain"});
         response.write("Hello World!!");
         response.end();
@@ -27,6 +29,4 @@ function start() {
     http.createServer(onRequest).listen(8888);
     console.log("server has started.");
 }
-
 exports.start = start;
-start();

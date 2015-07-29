@@ -1,0 +1,21 @@
+1，建立一个http服务器
+2，浏览器请求http://127.0.0.1:8888      输出OK
+3，浏览器请求http://127.0.0.1?info=b&param=c
+输出b+c 其中b和c都是整数
+
+循环添加事件：
+ 
+    <button>第1条记录</button>
+    <button>第2条记录</button>
+    <button>第3条记录</button>
+    <button>第4条记录</button>
+    <button>第5条记录</button>
+    <button>第6条记录</button>
+<script type="text/javascript">  
+    var buttonst_obj = document.getElementsByTagName("button"); 
+    for (var i = 0, len = buttonst_obj.length; i < len; i++) {
+        buttonst_obj[i].onclick = function() {   
+            alert(i);   
+        };
+    }
+</script>

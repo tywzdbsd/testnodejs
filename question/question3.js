@@ -20,7 +20,7 @@ function start(){
         response.end();
     }
     http.createServer(onRequest).listen(80);
-    console.log("server has started at http://127.0.0.1?info=22&param=33");
+    console.log("server has started at http://127.0.0.1");
 }
 exports.start = start;
 start();
