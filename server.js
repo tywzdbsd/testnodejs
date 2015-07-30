@@ -3,7 +3,7 @@
  */
 var http = require('http');
 
-http.createServer(function (request,response){
+var client = http.createServer(function (request,response){
     var html = '<html>　'
         +'<head>　'
         +'<title>nodejs</title>'
@@ -15,7 +15,6 @@ http.createServer(function (request,response){
     response.writeHead(200,{'Contend-Type':'text/plain'});
     response.write(html);
     response.end('<p style="color:#999999;background-color: #65ffec;">Hello World<p>');
-}).listen(8888);
-
+});
+client.listen(8888);
 console.log('Server runing at http://127.0.0.1:8888/');
-
