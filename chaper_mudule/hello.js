@@ -1,7 +1,7 @@
 /**
  * Created by tyw on 15/7/28.
  */
-//exports.world = function () { //通过export对象吧world作为模块的访问接口，模块，然后通过mian.js中exports对象的成员函数了。
+//exports.world = function () { //通过export对象吧world作为模块的访问接口，模块，然后通过main.js中exports对象的成员函数了。
 //    console.log('Hello World');
 //}
 

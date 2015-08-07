@@ -30,10 +30,17 @@ redisConnect.connOpen(host_path,host_port,selectDbNumber,auth);
 //    console.log(a);
 //});
 
-var jsonstr = "{'id':'1','name':'jack'}";//"{'id':'1','name':'jack'}"
+//jsonstr-->jsonobj
+//var jsonstr = "{'id':'1','name':'jack'}";//"{'id':'1','name':'jack'}"
 //console.log(jsonstr);
 //var jsonobj = JSON.parse(jsonstr);
 //console.log(jsonobj.name);
+
+//jsonobj-->jsonstr
+var jsonobj = {ret:'0',ret_msg:'登录成功',access_token:'token'};
+console.dir(jsonobj);
+var jsonstr = JSON.stringify(jsonobj);
+console.dir(jsonstr);
 
 //add
 //redisConnect.setAKindOfCache({
@@ -60,6 +67,6 @@ var jsonstr = "{'id':'1','name':'jack'}";//"{'id':'1','name':'jack'}"
 //});
 
 //findCacheBykind
-redisConnect.findCacheBykind({access_token:"token1",kind:"kind2"}, function (data) {
-    console.log(data);
-});
+//redisConnect.findCacheBykind({access_token:"token1",kind:"kind2"}, function (data) {
+//    console.log(data);
+//});

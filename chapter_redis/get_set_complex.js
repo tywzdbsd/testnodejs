@@ -4,7 +4,7 @@
 var redis = require('redis');
 var client = redis.createClient(6379, '127.0.0.1');
 client.select(0);//选择第0号数据库，默认0号
-client.auth('123', function () {//验证用户
+client.auth('vkhim', function () {//验证用户
     console.log('成功验证')
 })
 client.on('ready', function (err) {//监听准备事件
@@ -15,7 +15,7 @@ client.on('end', function (err) {//监听数据库结束事件
 });
 client.on('connect', function (err, data) {//监听数据库连接事件
     var name = 'tyw';
-    client.hmset(name, {'adventage': 'genius','age':'25','address':'hangzhou yuhang yanze'}, redis.print);//增加，返回成功与否
+    client.hmset(name, {adventage: 'genius',age:'26',address:'hangzhou yuhang yanze company'}, redis.print);//增加，返回成功与否
     //client.hmset(name, 'disadventage', 'heavy',redis.print);
     //client.del('b',redis.print);//删除key为'b'的键值对
     //client.hdel('tyw','age','disadventage',redis.print);   //删除,可以设置多个key,返回删除的个数
@@ -39,7 +39,8 @@ client.on('connect', function (err, data) {//监听数据库连接事件
         }
         console.log(res);
 
-    })
+    });
+    client.exists('tyw',redis.print);
 });
 //client.end();//可以放在最外面
 //client.quit();放最外层会报错  Redis connection gone from close event.

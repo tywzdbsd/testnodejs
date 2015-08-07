@@ -1,6 +1,12 @@
 /**
  * Created by tyw on 15/7/28.
  */
+/**
+*
+*
+*
+*
+* */
 function say(word){
     console.log(word);
 }

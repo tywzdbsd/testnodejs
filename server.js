@@ -12,6 +12,8 @@ var client = http.createServer(function (request,response){
         +　 '<p style="color:#65ffec;background-color: #999999;">hello world! 1234</p>'
         +'</body>　'
         +'</html>';
+    var id = request;
+    console.log(id);
     response.writeHead(200,{'Contend-Type':'text/plain'});
     response.write(html);
     response.end('<p style="color:#999999;background-color: #65ffec;">Hello World<p>');
