@@ -26,21 +26,37 @@ client.on('connect', function (err, data) {//监听数据库连接事件
         }
         //res.add = 'hz';//若没有add这个key，则会添加一个add:'hz'；若有add这个key，可以修改它对应的value
         console.dir(res);
+        console.log(typeof(res));
         //console.log(res.age);//res是一个json对象,即如果res={adventage:'height',age:25...},取值:res.age输出25
+        
+        client.hset('testexpire','user_id','12');
+        client.expire('testexpire',890);
+        client.ttl('testexpire',function(err,data){
+            if(data){
+                console.log(typeof(data));
+                console.dir(data);
+            }
+        });
+        client.hget('testexpire','user_id', function (err,user_id) {
+            if(user_id){
+                console.log(user_id);
+            }
+        });
         //client.flushall();  //服务器与数据库客户端关闭之前清理全部数据库
         //client.flushdb();   //服务器与数据库客户端关闭之前清理这号数据库
         client.quit();
         //client.end();
+        
 
     });
-    client.keys('*',function(err,res){
-        if (err) {
-            console.log(err);
-        }
-        console.log(res);
-
-    });
-    client.exists('tyw',redis.print);
+    //client.keys('*',function(err,res){
+    //    if (err) {
+    //        console.log(err);
+    //    }
+    //    console.log(res);
+    //
+    //});
+    //client.exists('tyw',redis.print);
 });
 //client.end();//可以放在最外面
 //client.quit();放最外层会报错  Redis connection gone from close event.

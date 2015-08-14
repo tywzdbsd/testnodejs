@@ -18,3 +18,15 @@ console.log(typeof(f));
 
 var time = new Date().getTime();
 console.log(typeof(time));
+
+var date = new Date();
+console.log(typeof(date));
+
+//string
+//function
+//number
+//boolean
+//object
+//undefined
+//number
+//object
