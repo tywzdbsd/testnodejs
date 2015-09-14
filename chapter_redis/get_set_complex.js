@@ -42,6 +42,7 @@ client.on('connect', function (err, data) {//监听数据库连接事件
                 console.log(user_id);
             }
         });
+        client.
         //client.flushall();  //服务器与数据库客户端关闭之前清理全部数据库
         //client.flushdb();   //服务器与数据库客户端关闭之前清理这号数据库
         client.quit();
